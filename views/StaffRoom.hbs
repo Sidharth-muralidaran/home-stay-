@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #76b852 ;">
+  <a class="navbar-brand" href="#">HomeStay</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/staff/roomdata/{{staff_id}}">Rooms<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/staff/guestdetails/{{staff_id}}">Guest<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <li class="nav-item dropdown" style="color:#76b852;">
+        <a class="nav-link dropdown-toggle" style="color:black;" href="#" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </form>
+  </div>
+</nav>
+<section>
+  <div class="container mt-4">
+    <div>
+      <table class="table border border-success">
+        <thead>
+          <tr>
+            <th scope="col">SL.No</th>
+            <th scope="col">Room No</th>
+            <th scope="col">Room Type</th>
+            <th scope="col">Guest Number</th>
+            <th scope="col">Availability</th>
+          </tr>
+        </thead>
+        {{#each roomdetails}}
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{this.RoomNumber}}</td>
+            <td>{{this.RoomType}}</td>
+            <td>{{this.GuestNumber}}</td>
+            <td>{{this.Availability}}</td>
+          </tr>
+        </tbody>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</section>

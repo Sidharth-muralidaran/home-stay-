@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #76b852 ;">
+  <a class="navbar-brand" href="#">HomeStay</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/adminhome">Staffs<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/guestdata">Guest<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/addroom">Rooms<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <li class="nav-item dropdown" style="color:#76b852;">
+        <a class="nav-link dropdown-toggle" style="color:black;" href="#" id="navbarDropdown" role="button"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </form>
+  </div>
+</nav>
+<section>
+  <div class="container mt-4">
+    <a href="/addstaff"><button class="btn btn-sm btn-success float-right mb-1">Add Staff</button></a>
+    <div>
+      <table class="table border border-success">
+        <thead>
+          <tr>
+            <th scope="col">SL.No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Qualification</th>
+            <th scope="col">Password</th>
+            <th scope="col">Delete</th>
+
+          </tr>
+        </thead>
+        {{#each staffdetails}}
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>{{this.Name}}</td>
+            <td>{{this.Gender}}</td>
+            <td>{{this.Email}}</td>
+            <td>{{this.Date_Of_Birth}}</td>
+            <td>{{this.Contact_Number}}</td>
+            <td>{{this.Qualification}}</td>
+            <td>{{this.Address}}</td>
+            <td>{{this.Password}}</td>
+            <td><a href="/delete/{{this._id}}" class="btn btn-danger">Delete</a></td>
+          </tr>
+        </tbody>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</section>
